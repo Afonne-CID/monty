@@ -9,6 +9,10 @@ void _add(stack_t **stack, unsigned int line_number)
 {
 	if ((*stack)->next == NULL || (*stack)->next == NULL)
 	{
-		fprintf("L%d: usage: push integer
+		fprintf(stderr, "L%d: usage: push integer", line_number);
+		return (EXIT_FAILURE);
 	}
+
+	(*stack)->next->next->n += (*stack)->next->n;
+	_pop(stack, line_number);
 }
